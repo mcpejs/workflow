@@ -14,7 +14,7 @@ jobs:
         with:
           url: https://url00.herokuapp.com/admin/export
           method: post
-          data: 'password=pass12'
+          data: 'password=watermelon'
       - name: Print the response status
         run: echo ${{ steps.request.outputs.status }}
         shell: bash
@@ -24,3 +24,14 @@ jobs:
       - name: Print the response payload
         run: echo ${{ steps.request.outputs.response }}
         shell: bash
+        
+
+      - name: fjogeleit Request
+        id: fjogeleitRequest
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: https://url00.herokuapp.com/admin/export
+          method: POST
+          data: 'password=fjogeleit'
+      - name: Show Response
+        run: echo ${{ steps.fjogeleitRequest.outputs.response }}
