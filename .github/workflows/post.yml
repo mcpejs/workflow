@@ -24,8 +24,6 @@ jobs:
       - name: Print the response payload
         run: echo ${{ steps.request.outputs.response }}
         shell: bash
-        
-
       - name: fjogeleit Request
         id: fjogeleitRequest
         uses: fjogeleit/http-request-action@master
