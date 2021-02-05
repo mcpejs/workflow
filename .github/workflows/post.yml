@@ -30,6 +30,6 @@ jobs:
         with:
           url: https://url00.herokuapp.com/admin/export
           method: "POST"
-          data: 'password=fjogeleit'
+          data: '{password=fjogeleit}'
       - name: Show Response
         run: echo ${{ steps.fjogeleitRequest.outputs.response }}
