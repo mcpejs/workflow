@@ -1,0 +1,26 @@
+name: Test POST
+on: push
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the sources
+        uses: actions/checkout@v2
+      - name: Execute a dummy request
+        id: request
+        uses: CamiloGarciaLaRotta/watermelon-http-client@v1
+        with:
+          url: 'https://jsonplaceholder.typicode.com/todos'
+          method: post
+          data: '{ "title": "dummy-todo", "userId": 1, "completed": false }'
+      - name: Print the response status
+        run: echo ${{ steps.request.outputs.status }}
+        shell: bash
+      - name: Print the response headers
+        run: echo ${{ steps.request.outputs.headers }}
+        shell: bash
+      - name: Print the response payload
+        run: echo ${{ steps.request.outputs.response }}
+        shell: bash
