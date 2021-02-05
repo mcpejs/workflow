@@ -12,9 +12,9 @@ jobs:
         id: request
         uses: CamiloGarciaLaRotta/watermelon-http-client@v1
         with:
-          url: https://httpbin.org/post
+          url: https://url00.herokuapp.com/admin/export
           method: post
-          data: '{ "title": "dummy-todo", "userId": 1, "completed": false }'
+          data: '{"password":"pass12"}'
       - name: Print the response status
         run: echo ${{ steps.request.outputs.status }}
         shell: bash
