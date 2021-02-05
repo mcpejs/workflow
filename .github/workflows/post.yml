@@ -28,8 +28,8 @@ jobs:
         id: fjogeleitRequest
         uses: fjogeleit/http-request-action@master
         with:
-          url: https://url00.herokuapp.com/admin/export
-          method: "POST"
-          data: '{password=fjogeleit}'
+          url: 'https://url00.herokuapp.com/admin/export'
+          method: 'POST'
+          data: 'password=fjogeleit'
       - name: Show Response
         run: echo ${{ steps.fjogeleitRequest.outputs.response }}
